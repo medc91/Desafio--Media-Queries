@@ -1,0 +1,264 @@
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-areas:
+        "menu"
+        "header"
+        "main"
+        "main"
+        "main"
+        "main"
+        "selector"
+        "footer";
+}
+
+.menu {
+    grid-area: menu;
+    background-color: #3d8361;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px 0 20px;
+    align-items: center;
+}
+
+.menu i {
+    color: #fff;
+    font-size: 25px;
+}
+
+.menu p {
+    color: #fff;
+    font-size: 20px;
+}
+
+
+header {
+    grid-area: header;
+    background-color: #d6cda4;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+select {
+    width: 80vw;
+    height: 2rem;
+    border: 0;
+    border-radius: 0.5rem;
+}
+
+
+
+.main {
+    grid-area: main;
+    background-color: #eef2e6;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.card,
+.card-none-1,
+.card-none-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 250px;
+    height: 300px;
+    text-align: center;
+    font-family: arial;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+button {
+    padding: 12px;
+    color: white;
+    background-color: #1C6758;
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+.card img {
+    object-fit: fill;
+    width: 100%;
+    height: 50%;
+}
+
+.card-none-1 img {
+    object-fit: fill;
+    width: 100%;
+    height: 50%;
+}
+
+.card-none-2 img {
+    object-fit: fill;
+    width: 100%;
+    height: 50%;
+}
+
+.selector {
+    grid-area: selector;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eef2e6;
+    padding: 1rem;
+}
+
+.selector button {
+    border: 1px solid black;
+    font-size: 1rem;
+    border-radius: 3px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-area: footer;
+    background-color: #1C6758;
+    padding: 10px;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.icons i {
+    font-size: 20px;
+    color: #fff;
+}
+
+.text p {
+    margin: 0;
+    color: #fff;
+}
+
+.card-none-1,
+.card-none-2,
+.hide-menu {
+    display: none;
+}
+
+@media (min-width: 576px) and (max-width: 992px) {
+    .container {
+        grid-template-areas:
+            "menu menu menu menu menu menu menu"
+            "header main main main main main main"
+            "header main main main main main main"
+            "header main main main main main main"
+            "header main main main main main main"
+            "header selector selector selector selector selector selector"
+            "footer footer footer footer footer footer footer";
+    }
+
+    .main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+
+
+    }
+
+    .hide-menu {
+        display: flex;
+        justify-content: space-between;
+        width: 30vw;
+    }
+
+    .icon-menu {
+        display: none;
+    }
+
+
+
+    header {
+        justify-content: flex-start;
+    }
+
+    label {
+        margin-top: 20px;
+    }
+
+    select {
+        width: 10rem;
+    }
+
+    .card-none-1 {
+        display: flex;
+
+    }
+
+    .hide-menu {
+        display: flex;
+        justify-content: space-between;
+        width: 30vw;
+    }
+}
+
+@media (min-width: 993px) {
+
+    .container {
+        grid-template-areas:
+            "menu header header header header header header"
+            "menu header header header header header header"
+            "menu header header header header header header"
+            "menu main main main main main main"
+            "menu main main main main main main"
+            "menu main main main main main main"
+            "footer main main main main main main"
+            "footer selector selector selector selector selector selector";
+    }
+
+    .main {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        padding: 1rem;
+        justify-items: center;
+        row-gap: 30px;
+    }
+
+    .icon-menu {
+        display: none;
+    }
+
+    .hide-menu {
+        display: block;
+    }
+
+    .card-none-1,
+    .card-none-2 {
+        display: flex;
+    }
+
+    header {
+        padding: 20px;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .icon {
+        padding-top: 30px;
+    }
+}
